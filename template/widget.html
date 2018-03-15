@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Widget Factory!</title>
+    <link rel="stylesheet" type="text/css" href="/static/components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/components/rdash-ui/dist/css/rdash.min.css">
+
+  </head>
+  <body ng-app="widgets">
+    <div id="page-wrapper" class="open">
+
+      <!-- Sidebar -->
+      <div id="sidebar-wrapper">
+        <ul class="sidebar">
+          <li class="sidebar-main"><a href="/">Dashboard <span class="menu-icon fa fa-tachometer"></span></a></li>
+          <li class="sidebar-title"><span>NAVIGATION</span></li>
+          <li class="sidebar-list"><a href="/">Dashboard <span class="menu-icon fa fa-tachometer"></span></a></li>
+          <li class="sidebar-list"><a href="/users">Users <span class="menu-icon fa fa-users"></span></a></li>
+          <li class="sidebar-list"><a href="/widgets">Widgets <span class="menu-icon fa fa-cubes"></span></a></li>
+        </ul>
+        <div class="sidebar-footer col-xs-12"><a href="#" target="_blank">&copy; 2015 Red Ventures</a></div>
+      </div>
+
+      <!-- End Sidebar -->
+      <div id="content-wrapper" ng-controller="widgetController">
+
+        <div class="page-content">
+
+          <!-- Header Bar -->
+          <div class="row header col-xs-12">
+            <div class="user pull-right">
+              <div class="item dropdown">
+                <a href="#" class="dropdown-toggle"><img src="/static/img/avatar.jpg" alt=""></a>
+              </div>
+            </div>
+            <div class="meta">
+              <div class="page">Dashboard</div>
+              <div class="breadcrumb-links">Home / Dashboard</div>
+            </div>
+          </div>
+          <!-- End Header Bar -->
+
+
+          <!-- Tables -->
+          <div class="row">
+
+            <!-- Widget listing -->
+            <div class="col-lg-12">
+              <div class="widget">
+                <div class="widget-header">Widgets
+                  <div class="pull-right">
+                    
+                  </div>
+                </div>
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th class="text-center">ID</th>
+                        <th>Name</th>
+                        <th>Color</th>
+                        <th>Price</th>
+                        <th>Melts?</th>
+                        <th>Inventory</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr ng-repeat="widget in widgets" ng-click="GetItem($index)">
+                        <td class="text-center" ng-bind="widget.id"></td>
+                        <td ng-bind="widget.name"></td>
+                        <td ng-bind="widget.color"></td>
+                        <td ng-bind="widget.price"></td>
+                        <td ng-bind="widget.melts"></td>
+                        <td ng-bind="widget.inventory"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div><!-- End Widgets -->
+
+          </div><!-- End Row -->
+
+          <hr>
+
+          <!-- Create/Edit -->
+          <div class="row">
+
+            <!-- Widget listing -->
+            <div class="col-lg-12">
+              <div class="widget">
+                <div class="widget-header">Create/Edit Template</div>
+                <div class="widget-body">
+                  <form class="form-horizontal">
+
+                    <legend ng-bind="title"></legend>
+
+                    <input id="name" name="name" type="hidden" placeholder="foo-bar" class="input-medium" ng-model="id">
+                    <!-- Name-->
+                    <div class="controls">
+                    Name
+                      <input id="name" name="name" type="text" placeholder="foo-bar" class="input-medium" ng-model="name">
+                    </div>
+
+                    <!-- Price -->
+                    <div class="controls">
+                      <div class="input-prepend">
+                      Price
+                        <span class="add-on">$</span>
+                        <input id="price" name="price" class="input-medium" placeholder="0.00" type="text" ng-model="price">
+                      </div>
+                    </div>
+
+                    <!-- Color -->
+                    <div class="controls">
+                    Color
+                      <select id="color" name="color" class="input-large" ng-options="o for o in options" ng-model="selectedOption">
+                      </select>
+                    </div>
+
+                    <!-- Melts -->
+                    <div class="controls">
+                      Melts
+                      <input type="checkbox" name="melts" id="melts" value="melts" ng-model="melts">
+                    </div>
+
+                    <!-- Inventory -->
+                    <div class="controls">
+                      Inventory
+                      <input id="inventory" name="inventory" type="text" placeholder="#?" class="input-small" ng-model="inventory">
+                    </div>
+                    <div class="controls">
+                      <input type="text" class="btn btn-sm btn-info" ng-model="buttom" ng-click="submit()">
+                    </div>
+                  </form>
+                </div><!-- End Widget body -->
+              </div><!-- End Widget -->
+            </div><!-- End Column -->
+          </div><!-- End Row -->
+
+        </div><!-- End Page Content -->
+      </div><!-- End Content Wrapper -->
+    </div><!-- End Page Wrapper -->
+    <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <script src = "/static/js/app.js"></script>
+  </body>
+</html>

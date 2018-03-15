@@ -1,0 +1,6 @@
+[Database]
+serverAddr = "ds141524.mlab.com:41524"
+dbName = "widgets-api"
+timeout = 10
+username = "user"
+password = "user"
