@@ -64,7 +64,7 @@ func LoginHandler(w http.ResponseWriter, r *http.Request) {
 	// you would like it to contain.
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
 		"name": user.Name,
-		"ext":  time.Now().Add(time.Minute * 60).Unix(),
+		"ext":  time.Now().Add(time.Minute * 20160).Unix(),
 	})
 
 	// Sign and get the complete encoded token as a string using the secret
@@ -72,7 +72,6 @@ func LoginHandler(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		//return err
 	}
-	fmt.Println(tokenString)
 	response := Token{tokenString}
 	util.JsonResponse(response, w)
 }

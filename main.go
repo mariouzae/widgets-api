@@ -4,11 +4,10 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/mariouzae/widgets-api/app/dao"
-	"github.com/mariouzae/widgets-api/app/route"
-	"github.com/mariouzae/widgets-api/app/util"
-
-	"github.com/mariouzae/widgets-api/config"
+	"widgets-api/app/dao"
+	"widgets-api/app/route"
+	"widgets-api/app/util"
+	"widgets-api/config"
 )
 
 var (
