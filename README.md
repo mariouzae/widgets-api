@@ -4,7 +4,7 @@ This project was developed using golang 1.10 version
 
 ## How to build and run
 
-Be sure you have golang installed into you system
+Be sure you have golang installed into your system
 ```
 go get github.com/golang/dep/...
 go ensure
