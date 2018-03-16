@@ -16,4 +16,4 @@ Type in your browser
 
 https://localhost:4000
 
-WARNING: This project use an invalid SSL certificate which must be accepted. Most of browsers like Chrome leave you to proceed anyway with non valids certificates.
+**WARNING**: This project use an invalid SSL certificate which must be accepted. Most of browsers like Chrome leave you to proceed anyway with non valids certificates.
